@@ -16,7 +16,7 @@ char* progName( char* argv0 ){
 }
 
 int main( int argc, char* argv[] ){
-	register int i, j;
+	register int i, j, k;
 	FILE* fp;
 	FILE* fp2;
 	char line[1024 + 1];
@@ -134,7 +134,15 @@ int main( int argc, char* argv[] ){
 						} else {
 							fprintf( fp2, " | " );
 						}
-						fprintf( fp2, "%s \"\\\"%s\\\"\" \"STRING_%d\"", argv[4], str[i], j );
+						fprintf( fp2, "%s \"\\\"", argv[4] );
+						for( k = 0; k < strlen( str[i] ); k++ ){
+							if( str[i][k] == '*' ){
+								fprintf( fp2, "\\%c", str[i][k] );
+							} else {
+								fprintf( fp2, "%c", str[i][k] );
+							}
+						}
+						fprintf( fp2, "\\\"\" \"STRING_%d\"", j );
 
 						j++;
 					}

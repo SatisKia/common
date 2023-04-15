@@ -15,6 +15,7 @@ char* progName( char* argv0 ){
 }
 
 int main( int argc, char* argv[] ){
+	register int i;
 	FILE* fp;
 	char line[1024 + 1];
 	char* ptrTop;
@@ -32,6 +33,13 @@ int main( int argc, char* argv[] ){
 		}
 	} else {
 		fp = stdin;
+	}
+
+	while( (ptrTop = strstr( argv[1], "\\*" )) != NULL ){
+		for( i = 0; i < strlen(ptrTop) - 1; i++ ){
+			ptrTop[i] = ptrTop[i + 1];
+		}
+		ptrTop[i] = '\0';
 	}
 
 if( strncmp( argv[2], "STRING_", 7 ) == 0 ){
