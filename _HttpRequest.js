@@ -1,3 +1,8 @@
+/*
+ * D2JS
+ * Copyright (C) SatisKia. All rights reserved.
+ */
+
 function _HttpRequestHeader( header, value ){
 	this._header = header;
 	this._value  = value;
