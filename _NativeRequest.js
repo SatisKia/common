@@ -1,3 +1,8 @@
+/*
+ * D2JS
+ * Copyright (C) SatisKia. All rights reserved.
+ */
+
 function _NativeRequest(){
 	this.e = document.createElement( "iframe" );
 	this.e.setAttribute( "width", 0 );

@@ -1,4 +1,8 @@
-// プリファレンス
+/*
+ * D2JS
+ * Copyright (C) SatisKia. All rights reserved.
+ */
+
 function _Preference( useStorage ){
 	this.s = (useStorage && canUseStorage());
 	this.c = canUseCookie();
